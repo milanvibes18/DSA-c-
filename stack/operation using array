@@ -71,3 +71,18 @@ int stackTop(struct Stack st) {
         return st.S[st.top];
     return -1;
 }
+
+int main(){
+ struct Stack st;
+    create(&st);
+    push(&st, 10);
+    push(&st, 20);
+    push(&st, 30);
+    Display(st);
+    printf("Pop: %d\n", pop(&st));
+    printf("Peek(2): %d\n", peek(st,2));
+    printf("Top: %d\n", stackTop(st));
+    printf("IsEmpty: %d\n", isEmpty(st));
+    printf("IsFull: %d\n", isFull(st));
+    return 0;
+}
