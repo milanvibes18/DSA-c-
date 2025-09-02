@@ -1,4 +1,4 @@
-
+# ---------------- Problem 1: Concatenate Two Doubly Linked Lists ----------------
 class DNode:
     def __init__(self, data):
         self.data = data
@@ -6,7 +6,7 @@ class DNode:
         self.next = None
 
 def concatenateDLL():
-    
+    # Create first list (1 -> 2 -> 3)
     head1 = DNode(1)
     temp = head1
     for i in [2, 3]:
@@ -15,7 +15,7 @@ def concatenateDLL():
         newNode.prev = temp
         temp = newNode
 
-    
+    # Create second list (4 -> 5 -> 6)
     head2 = DNode(4)
     temp = head2
     for i in [5, 6]:
@@ -24,14 +24,14 @@ def concatenateDLL():
         newNode.prev = temp
         temp = newNode
 
-    
+    # Concatenate
     tail = head1
     while tail.next:
         tail = tail.next
     tail.next = head2
     head2.prev = tail
 
-    
+    # Print concatenated list
     print("Concatenated List:", end=" ")
     temp = head1
     while temp:
